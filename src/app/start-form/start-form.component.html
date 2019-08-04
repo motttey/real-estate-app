@@ -1,1 +1,48 @@
 <p>start-form works!</p>
+
+<div class="ui equal width center aligned padded grid">
+  <!-- 条件 -->
+  <div class="row">
+    <div class="column">
+      <div class="ui form">
+        <div class="inline field">
+            <ng-container *ngFor="let floor_plan of floor_plans">
+              <label>
+                <input type="checkbox" name="floor_plan.name" class="ui checkbox"
+                  [(ngModel)]="floor_plan.selected"
+                  [value]="floor_plan.name"
+                  (change)="checkbox_changed(floor_plan)"
+                > {{floor_plan.name}}
+              </label>
+            </ng-container>
+
+          <!--
+          <div class="ui checkbox">
+            <select class="form-control" id="floor_plan_checkbox" required>
+              <option *ngFor="let floor_plan of floor_plans" [value]="floor_plan">{{floor_plan}}</option>
+            </select>
+          </div>
+          -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- こだわり条件 -->
+  <div class="row">
+    <div class="column">
+      <div class="ui form">
+        <div class="inline field">
+          <div class="ui checkbox">
+            <input type="checkbox" tabindex="0">
+            <label>Checkbox</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <a (click)="formSubmitHandler()" [routerLink]="['/result']">Go Search</a>
+  </div>
+</div>
