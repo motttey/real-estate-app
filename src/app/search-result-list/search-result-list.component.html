@@ -1,1 +1,8 @@
-<p>search-result-list works!</p>
+<p>search-result-list</p>
+
+<div class="estate-item" *ngFor="let estate of estates | async">
+  <span>{{ estate.name }}</span>
+  <span>{{ estate.address }}</span>
+  <span>{{ estate.rent | currency: 'JPY' }}</span>
+  <button [routerLink]="['/details', estate.id]">Detail</button>
+</div>

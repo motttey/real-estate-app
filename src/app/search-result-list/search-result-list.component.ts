@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../search.service';
 
 @Component({
   selector: 'app-search-result-list',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-result-list.component.scss']
 })
 export class SearchResultListComponent implements OnInit {
+  estates;
 
-  constructor() { }
+  constructor(
+    private searchService: SearchService
+  ) {
+    this.estates = this.searchService.getSearchResult();
+  }
 
   ngOnInit() {
   }

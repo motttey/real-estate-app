@@ -1,1 +1,8 @@
 <p>search-result-detail works!</p>
+
+<div *ngIf="selected_estate">
+  <span>{{ selected_estate.id }}</span>
+  <span>{{ selected_estate.name }}</span>
+  <span>{{ selected_estate.address }}</span>
+  <span>{{ selected_estate.rent | currency: 'JPY'}}</span>
+</div>

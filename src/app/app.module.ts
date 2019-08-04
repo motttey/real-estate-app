@@ -29,7 +29,7 @@ import { SearchResultComponent } from './search-result/search-result.component';
     RouterModule.forRoot([
       { path: '', component: StartFormComponent },
       { path: 'result', component: SearchResultComponent },
-      { path: 'result/detail', component: SearchResultDetailComponent },
+      { path: 'details/:estateId', component: SearchResultDetailComponent },
       { path: 'bookmark', component: BookmarkListComponent },
     ])
   ],

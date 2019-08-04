@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchService {
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
+
+  getSearchResult() {
+    return this.http.get('/assets/result.json');
+  }
 }
