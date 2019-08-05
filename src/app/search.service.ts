@@ -6,7 +6,7 @@ import { Estate_Condition }    from './estate_condition';
   providedIn: 'root'
 })
 export class SearchService {
-  condition_model = new Estate_Condition("none", "none", [], [], []);
+  condition_model = new Estate_Condition(0, 0, 0, 0, "none", "none", [], [], [], []);
 
   constructor(
     private http: HttpClient
