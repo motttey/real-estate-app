@@ -1,8 +1,20 @@
 <p>search-result-list</p>
 
-<div class="estate-item" *ngFor="let estate of estates | async">
-  <span>{{ estate.name }}</span>
-  <span>{{ estate.address }}</span>
-  <span>{{ estate.rent | currency: 'JPY' }}</span>
-  <button [routerLink]="['/details', estate.id]">Detail</button>
+<div class="ui items">
+  <div class="estate-item item" *ngFor="let estate of estates | async | paginate: { itemsPerPage: 10, currentPage: p }">
+    <div class="description">
+      <p>
+        <span>{{ estate.name }}</span>
+        <span>{{ estate.address }}</span>
+      </p>
+      <p>
+        <span>{{ estate.rent | currency: 'JPY' }}</span>
+      </p>
+    </div>
+    <div class="extra">
+      <button class="ui button" [routerLink]="['/details', estate.id]">Detail</button>
+    </div>
+  </div>
 </div>
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

@@ -9,12 +9,14 @@ import { SearchService } from '../search.service';
 export class SearchResultListComponent implements OnInit {
   estates;
   condition_model;
+  p: number;
 
   constructor(
     private searchService: SearchService
   ) {
     this.estates = this.searchService.getSearchResult();
     this.condition_model = searchService.getConditionModel();
+    this.p = 1;
     console.log(this.condition_model);
   }
 

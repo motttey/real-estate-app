@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+import { NgxPaginationModule } from 'ngx-pagination';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StartFormComponent } from './start-form/start-form.component';
@@ -28,6 +30,7 @@ import { SearchResultComponent } from './search-result/search-result.component';
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
+    NgxPaginationModule,
     RouterModule.forRoot([
       { path: '', component: StartFormComponent },
       { path: 'result', component: SearchResultComponent },
