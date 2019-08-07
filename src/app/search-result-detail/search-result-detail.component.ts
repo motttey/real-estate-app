@@ -29,4 +29,8 @@ export class SearchResultDetailComponent implements OnInit {
         });
     });
   }
+
+  formSubmitHandler () {
+    alert("ブックマークに追加しました")
+  }
 }

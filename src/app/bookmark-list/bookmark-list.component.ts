@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bookmark-list.component.scss']
 })
 export class BookmarkListComponent implements OnInit {
-
+  bookmark_list;
+  
   constructor() { }
 
   ngOnInit() {
