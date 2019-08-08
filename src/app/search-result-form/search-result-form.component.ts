@@ -58,7 +58,7 @@ export class SearchResultFormComponent implements OnInit {
   }
 
   select_age_option(age_option): void {
-    this.condition_model.age = age_option.name;
+    this.condition_model.age = age_option;
   }
 
   age_selection_change(age_option): void {

@@ -2,96 +2,140 @@
   <!-- 条件 -->
   <div class="row">
     <div class="column">
+      <p>条件を絞り込む</p>
       <div class="ui form">
-        <div class="inline field">
-            <ng-container *ngFor="let structure of structures">
-              <label>
-                <input type="checkbox" name="structure.name" class="ui checkbox"
-                  [(ngModel)]="structure.selected"
-                  [value]="structure.name"
-                  (change)="structure_changed(structure)"
-                > {{structure.text}}
-              </label>
-            </ng-container>
-        </div>
+        <table class="condition-table ui celled table">
+          <tbody>
+            <tr>
+              <th>賃料</th>
+              <td>
+                <div class="inline field">
+                  <select class="form-control" required (change)="select_rent_min($event.target.value)">
+                    <option *ngFor="let rent_min of rent_min_options" [value]="rent_min.name" >{{rent_min.text}}</option>
+                  </select>
+                  <p class="connection_string">～</p>
+                  <select class="form-control" required (change)="select_rent_max($event.target.value)">
+                    <option *ngFor="let rent_max of rent_max_options" [value]="rent_max.name" >{{rent_max.text}}</option>
+                  </select>
+                </div>
 
-        <div class="inline field">
-          <ng-container *ngFor="let rent_option of rent_options">
-            <label>
-              <input type="checkbox" name="rent_option.name" class="ui checkbox"
-                [(ngModel)]="rent_option.selected"
-                [value]="rent_option.name"
-                (change)="rent_option_changed(rent_option)"
-              > {{rent_option.text}}
-            </label>
-          </ng-container>
-        </div>
+                <div class="inline field">
+                  <ng-container *ngFor="let rent_option of rent_options">
+                    <label>
+                      <input type="checkbox" name="rent_option.name" class="ui checkbox"
+                        [(ngModel)]="rent_option.selected"
+                        [value]="rent_option.name"
+                        (change)="rent_option_changed(rent_option)"
+                      > {{rent_option.text}}
+                    </label>
+                  </ng-container>
+                </div>
+              </td>
+            </tr>
 
-        <div class="inline field">
-          <ng-container *ngFor="let room_type of room_types">
-            <label>
-              <input type="checkbox" name="room_type.name" class="ui checkbox"
-                [(ngModel)]="room_type.selected"
-                [value]="room_type.name"
-                (change)="room_type_changed(room_type)"
-              > {{room_type.text}}
-            </label>
-          </ng-container>
-        </div>
+            <tr>
+              <th>占有面積</th>
+              <td>
+                <div class="inline field">
+                  <select class="form-control" required (change)="select_area_min($event.target.value)">
+                    <option *ngFor="let area_min of area_min_options" [value]=area_min.name>{{area_min.text}}</option>
+                  </select>
+                  <p class="connection_string">～</p>
+                  <select class="form-control" required (change)="select_area_max($event.target.value)">
+                    <option *ngFor="let area_max of area_max_options" [value]=area_max.name>{{area_max.text}}</option>
+                  </select>
+                </div>
+              </td>
+            </tr>
 
-        <div class="inline field">
-          <ng-container *ngFor="let option of options">
-            <label>
-              <input type="checkbox" name="option.name" class="ui checkbox"
-                [(ngModel)]="option.selected"
-                [value]="option.name"
-                (change)="option_changed(option)"
-              > {{option.text}}
-            </label>
-          </ng-container>
-        </div>
+            <tr>
+              <th>間取り</th>
+              <td>
+                <div class="inline field">
+                  <ng-container *ngFor="let room_type of room_types">
+                    <label>
+                      <input type="checkbox" name="room_type.name" class="ui checkbox"
+                        [(ngModel)]="room_type.selected"
+                        [value]="room_type.name"
+                        (change)="room_type_changed(room_type)"
+                      > {{room_type.text}}
+                    </label>
+                  </ng-container>
+                </div>
+              </td>
+            </tr>
 
-        <div class="inline field">
-          <ng-container *ngFor="let distance_option of distance_options">
-            <label>
-              <input type="radio" name="distance_option.name" class="ui radio"
-                [checked]="distance_option.selected"
-                [value]="distance_option.name"
-                (change)="distance_selection_change(distance_option)"
-              > {{distance_option.text}}
-            </label>
-          </ng-container>
-        </div>
+            <tr>
+              <th>駅徒歩分</th>
+              <td>
+                <div class="inline field">
+                  <ng-container *ngFor="let distance_option of distance_options">
+                    <label>
+                      <input type="radio" name="distance_option.name" class="ui radio"
+                        [checked]="distance_option.selected"
+                        [value]="distance_option.name"
+                        (change)="distance_selection_change(distance_option)"
+                      > {{distance_option.text}}
+                    </label>
+                  </ng-container>
+                </div>
+              </td>
+            </tr>
 
-        <div class="inline field">
-          <ng-container *ngFor="let age_option of age_options">
-            <label>
-              <input type="radio" name="age_option.name" class="ui radio"
-                [checked]="age_option.selected"
-                [value]="age_option.name"
-                (change)="age_selection_change(age_option)"
-              > {{age_option.text}}
-            </label>
-          </ng-container>
-        </div>
+            <tr>
+              <th>築年数</th>
+              <td>
+                <div class="inline field">
+                  <ng-container *ngFor="let age_option of age_options">
+                    <label>
+                      <input type="radio" name="age_option.name" class="ui radio"
+                        [checked]="age_option.selected"
+                        [value]="age_option.name"
+                        (change)="age_selection_change(age_option)"
+                      > {{age_option.text}}
+                    </label>
+                  </ng-container>
+                </div>
+              </td>
+            </tr>
 
-        <div class="inline field">
-          <select class="form-control" required (change)="select_rent_min($event.target.value)">
-            <option *ngFor="let rent_min of rent_min_options" [value]="rent_min.name" >{{rent_min.text}}</option>
-          </select>
-          <select class="form-control" required (change)="select_rent_max($event.target.value)">
-            <option *ngFor="let rent_max of rent_max_options" [value]="rent_max.name" >{{rent_max.text}}</option>
-          </select>
-        </div>
+            <tr>
+              <th>建物構造</th>
+              <td>
+                <div class="inline field">
+                    <ng-container *ngFor="let structure of structures">
+                      <label>
+                        <input type="checkbox" name="structure.name" class="ui checkbox"
+                          [(ngModel)]="structure.selected"
+                          [value]="structure.name"
+                          (change)="structure_changed(structure)"
+                        > {{structure.text}}
+                      </label>
+                    </ng-container>
+                </div>
+              </td>
+            </tr>
 
-        <div class="inline field">
-          <select class="form-control" required (change)="select_area_min($event.target.value)">
-            <option *ngFor="let area_min of area_min_options" [value]=area_min.name>{{area_min.text}}</option>
-          </select>
-          <select class="form-control" required (change)="select_area_max($event.target.value)">
-            <option *ngFor="let area_max of area_max_options" [value]=area_max.name>{{area_max.text}}</option>
-          </select>
-        </div>
+            <tr>
+              <th>その他こだわり条件</th>
+              <td>
+                <div class="inline field">
+                  <ng-container *ngFor="let option of options">
+                    <label>
+                      <input type="checkbox" name="option.name" class="ui checkbox"
+                        [(ngModel)]="option.selected"
+                        [value]="option.name"
+                        (change)="option_changed(option)"
+                      > {{option.text}}
+                    </label>
+                  </ng-container>
+                </div>
+              </td>
+            </tr>
+
+
+          </tbody>
+        </table>
 
       </div>
     </div>
