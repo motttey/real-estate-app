@@ -53,6 +53,14 @@ export class SearchResultFormComponent implements OnInit {
     this.condition_model.rent_max = parseInt(rent_max, 10);
   }
 
+  select_distance_option(distance_option): void {
+    this.condition_model.distance = distance_option;
+  }
+
+  select_age_option(age_option): void {
+    this.condition_model.age = age_option.name;
+  }
+
   age_selection_change(age_option): void {
     this.condition_model.age = age_option.name;
   }

@@ -10,7 +10,7 @@
           <img src="https://cdn.pixabay.com/photo/2016/11/29/03/53/architecture-1867187_960_720.jpg">
         </div>
         <div class="content">
-          <a class="header">{{ estate.name }}</a>
+          <a class="header" [routerLink]="['/details', estate.id]">{{ estate.name }}</a>
           <div class="description">
             <p>
               <span>{{ estate.address }}</span>
