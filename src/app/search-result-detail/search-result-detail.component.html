@@ -1,8 +1,15 @@
 <p>search-result-detail works!</p>
 
 <div *ngIf="selected_estate">
-  <span>{{ selected_estate.id }}</span>
-  <span>{{ selected_estate.name }}</span>
-  <span>{{ selected_estate.address }}</span>
-  <span>{{ selected_estate.rent | currency: 'JPY'}}</span>
+  <h1>
+    <span>{{ selected_estate.id }}</span>
+    <span>{{ selected_estate.name }}</span>
+  </h1>
+  <p>
+    <span>{{ selected_estate.address }}</span>
+  </p>
+  <p>
+    <span>{{ selected_estate.rent | currency: 'JPY'}}</span>
+  </p>
+  <a class="ui button" (click)="formSubmitHandler(selected_estate)" [routerLink]="['/bookmark']">ブックマーク</a>
 </div>

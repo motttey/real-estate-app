@@ -1,20 +1,30 @@
-<p>search-result-list</p>
+<div class="ui grid">
+  <div class="row">
+    <h2>実験結果</h2>
+  </div>
 
-<div class="ui items">
-  <div class="estate-item item" *ngFor="let estate of estates | async | paginate: { itemsPerPage: 10, currentPage: p }">
-    <div class="description">
-      <p>
-        <span>{{ estate.name }}</span>
-        <span>{{ estate.address }}</span>
-      </p>
-      <p>
-        <span>{{ estate.rent | currency: 'JPY' }}</span>
-      </p>
-    </div>
-    <div class="extra">
-      <button class="ui button" [routerLink]="['/details', estate.id]">Detail</button>
+  <div class="row">
+    <div class="ui items">
+      <div class="estate-item item" *ngFor="let estate of estates | async | paginate: { itemsPerPage: 10, currentPage: p }">
+        <div class="image">
+          <img src="https://cdn.pixabay.com/photo/2016/11/29/03/53/architecture-1867187_960_720.jpg">
+        </div>
+        <div class="content">
+          <a class="header">{{ estate.name }}</a>
+          <div class="description">
+            <p>
+              <span>{{ estate.address }}</span>
+            </p>
+            <p>
+              <span>{{ estate.rent | currency: 'JPY' }}</span>
+            </p>
+          </div>
+          <div class="extra">
+            <button class="ui button" [routerLink]="['/details', estate.id]">詳細</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
-
-<pagination-controls (pageChange)="p = $event"></pagination-controls>

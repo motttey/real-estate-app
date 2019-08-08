@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SearchService } from '../search.service';
+import { BookmarkService } from '../bookmark.service';
 
 @Component({
   selector: 'app-search-result-detail',
@@ -9,13 +10,16 @@ import { SearchService } from '../search.service';
 })
 export class SearchResultDetailComponent implements OnInit {
   estate_list;
+  bookmarks;
   selected_estate;
 
   constructor(
     private route: ActivatedRoute,
     private searchService: SearchService,
+    private bookmarkService: BookmarkService,
   ) {
     this.estate_list = this.searchService.getSearchResult();
+    this.bookmarks = this.bookmarkService.getBookmarks();
   }
 
   ngOnInit() {
@@ -28,5 +32,14 @@ export class SearchResultDetailComponent implements OnInit {
           });
         });
     });
+  }
+
+  formSubmitHandler(selected_estate) {
+    if (this.bookmarks.findIndex(x => x.id === selected_estate.id) < 0) {
+      this.bookmarkService.addBookmark(selected_estate);
+      alert("ブックマークに登録しました. ");
+    }
+    else
+      alert("既に登録されています. ");
   }
 }

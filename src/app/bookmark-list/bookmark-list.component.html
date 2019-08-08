@@ -1,1 +1,36 @@
-<p>bookmark-list works!</p>
+<div class="ui grid">
+  <div class="row">
+    <h2>ブックマーク</h2>
+  </div>
+
+  <div class="row">
+    <div class="ui items">
+      <div class="estate-item item" *ngFor="let estate of bookmarked_estates | paginate: { itemsPerPage: 10, currentPage: p }">
+        <div class="image">
+          <img src="https://cdn.pixabay.com/photo/2016/11/29/03/53/architecture-1867187_960_720.jpg">
+        </div>
+        <div class="content">
+          <a class="header">{{ estate.name }}</a>
+          <div class="description">
+            <p>
+              <span>{{ estate.address }}</span>
+            </p>
+            <p>
+              <span>{{ estate.rent | currency: 'JPY' }}</span>
+            </p>
+          </div>
+          <div class="extra">
+            <div class="row">
+              <button class="ui button" [routerLink]="['/details', estate.id]">詳細</button>
+              <button class="ui button" (click)="removeElementHandler(estate)">削除</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  <div class="row">
+    <a class="ui button" (click)="formSubmitHandler()" [routerLink]="['/result']">結果に戻る</a>
+  </div>
+</div>

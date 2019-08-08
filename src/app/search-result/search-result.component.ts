@@ -16,5 +16,4 @@ export class SearchResultComponent implements OnInit {
   ngOnInit() {
     this.estates = this.searchService.getSearchResult();
   }
-
 }
