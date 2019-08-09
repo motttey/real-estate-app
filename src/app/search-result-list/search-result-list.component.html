@@ -1,6 +1,6 @@
 <div class="ui grid">
   <div class="row">
-    <h2>実験結果</h2>
+    <h2>検索結果</h2>
   </div>
 
   <div class="row">
@@ -12,17 +12,62 @@
         <div class="content">
           <a class="header" [routerLink]="['/details', estate.id]">{{ estate.name }}</a>
           <div class="description">
-            <p>
-              <span>{{ estate.address }}</span>
-            </p>
-            <p>
-              <span>{{ estate.rent | currency: 'JPY' }}</span>
-            </p>
+            <table class="condition-table ui celled table">
+              <tbody>
+                <tr>
+                  <th>所在地</th>
+                  <td>
+                    <span>{{ estate.address }}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th>交通</th>
+                  <td>
+                    <span>hogehoge線 徒歩7分</span>
+                  </td>
+                </tr>
+                <tr>
+                    <th>他条件</th>
+                    <td>
+                      <span>aaa, bbb</span>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+
           </div>
-          <div class="extra">
-            <button class="ui button" [routerLink]="['/details', estate.id]">詳細</button>
-          </div>
+
         </div>
+
+        <div class="row">
+          <table class="extra-condition-table ui celled table">
+            <thead>
+              <th>間取り</th>
+              <th>階数</th>
+              <th>賃料/管理費</th>
+              <th>間取り/占有面積</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <span>image</span>
+                </td>
+                <td>
+                  <span>n階</span>
+                </td>
+                <td>
+                  <span>{{ estate.rent | currency: 'JPY' }}</span>
+                </td>
+                <td>
+                  <span>NDK/mmm</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button class="ui button" (click)="formSubmitHandler(estate)">ブックマーク</button>
+          <button class="ui button" [routerLink]="['/details', estate.id]">詳細</button>
+        </div>
+
       </div>
     </div>
   </div>

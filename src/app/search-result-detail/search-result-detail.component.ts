@@ -34,7 +34,6 @@ export class SearchResultDetailComponent implements OnInit {
     });
   }
 
-<<<<<<< HEAD
   formSubmitHandler(selected_estate) {
     if (this.bookmarks.findIndex(x => x.id === selected_estate.id) < 0) {
       this.bookmarkService.addBookmark(selected_estate);
@@ -42,9 +41,5 @@ export class SearchResultDetailComponent implements OnInit {
     }
     else
       alert("既に登録されています. ");
-=======
-  formSubmitHandler () {
-    alert("ブックマークに追加しました")
->>>>>>> d4cd43aa5508bf22c13eb6ef257770e91c8fadb5
   }
 }
