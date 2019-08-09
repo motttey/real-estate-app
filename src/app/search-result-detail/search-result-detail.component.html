@@ -1,15 +1,85 @@
-<p>search-result-detail works!</p>
+<div class="ui grid" *ngIf="selected_estate">
+  <div class="row header">
+    <div class="four wide column">
+      <h2>{{ selected_estate.name }}</h2>
+    </div>
+    <div class="four wide column">
+      <button class="ui button" (click)="formSubmitHandler(selected_estate)">ブックマーク</button>
+    </div>
+  </div>
 
-<div *ngIf="selected_estate">
-  <h1>
-    <span>{{ selected_estate.id }}</span>
-    <span>{{ selected_estate.name }}</span>
-  </h1>
-  <p>
-    <span>{{ selected_estate.address }}</span>
-  </p>
-  <p>
-    <span>{{ selected_estate.rent | currency: 'JPY'}}</span>
-  </p>
-  <a class="ui button" (click)="formSubmitHandler(selected_estate)" [routerLink]="['/bookmark']">ブックマーク</a>
+  <div class="row content">
+    <div class="fourteen wide column centered">
+      <table class="condition-table ui celled table row">
+        <tbody>
+          <tr>
+            <th>所在地</th>
+            <td>
+              <span>{{ selected_estate.address }}</span>
+            </td>
+          </tr>
+          <tr>
+            <th>交通</th>
+            <td>
+              <span>hogehoge線 徒歩7分</span>
+            </td>
+          </tr>
+          <tr>
+              <th>他条件</th>
+              <td>
+                <span>aaa, bbb</span>
+              </td>
+          </tr>
+          <tr>
+            <th>間取り</th>
+            <td>
+              <span>image</span>
+            </td>
+          </tr>
+          <tr>
+            <th>階数</th>
+            <td>
+              <span>n階</span>
+            </td>
+          </tr>
+          <tr>
+            <th>賃料/管理費</th>
+            <td>
+              <span>{{ selected_estate.rent | currency: 'JPY' }}</span>
+            </td>
+          </tr>
+          <tr>
+            <th>間取り/占有面積</th>
+            <td>
+              <span>NDK/mmm</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row image_box two columns">
+    <div class="six wide column thumbnails">
+      <div class="row two columns centered" >
+        <img class="thumbnail four wide column centered" *ngFor="let thumbnail of thumbnail_list | paginate: { itemsPerPage: 6, currentPage: p }" (click)="clickEventHandler(thumbnail)" [src]="thumbnail" width="40%">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>
+
+    <div class="ten wide column image">
+      <div class="ui grid">
+        <div class="two wide column">
+          <button class="ui button prev" (click)="getPrevIndex()"><</button>
+        </div>
+        <div class="twelve wide column">
+          <img [src]=thumbnail_list[thumbnail_index] width=100%>
+        </div>
+        <div class="two wide column">
+          <button class="ui button next" (click)="getNextIndex()">></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
