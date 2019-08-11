@@ -1,6 +1,28 @@
-.ui.items > .item {
+.estate-item {
   border-radius: 1%;
   padding: 10px;
   border-top : solid 2px black;
   border-bottom: solid 2px black;
+  margin: 30px 10px 30px 10px;
+}
+
+.pagination {
+  text-align: center;
+}
+
+img {
+  margin: 10px;
+}
+
+img.main-thumbnail{
+  width: 200px;
+}
+
+button {
+  text-align: center;
+}
+
+table {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
