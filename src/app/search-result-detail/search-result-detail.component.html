@@ -60,15 +60,20 @@
   </div>
 
   <div class="row image_box two columns">
+
     <div class="six wide column thumbnails">
-      <div class="row two columns centered" >
-        <img class="thumbnail four wide column centered" *ngFor="let thumbnail of thumbnail_list | paginate: { itemsPerPage: 6, currentPage: p }" (click)="clickEventHandler(thumbnail)" [src]="thumbnail" width="40%">
-        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      <div class="ui grid center aligned">
+        <div class="row two columns" >
+          <img class="thumbnail eight wide column centered" *ngFor="let thumbnail of thumbnail_list | paginate: { itemsPerPage: 6, currentPage: p }" (click)="clickEventHandler(thumbnail)" [src]="thumbnail" width="40%">
+        </div>
+        <div class="row one column pagination">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
       </div>
     </div>
 
     <div class="ten wide column image">
-      <div class="ui grid">
+      <div class="ui grid middle aligned">
         <div class="two wide column">
           <button class="ui button prev" (click)="getPrevIndex()"><</button>
         </div>

@@ -5,7 +5,7 @@
 <div class="estate-item item" *ngFor="let estate of estates | async | paginate: { itemsPerPage: 10, currentPage: p }">
   <div class="ui grid">
     <div class="row two columns">
-      <div class="four wide column inline">
+      <div class="four wide column thumbnail-column">
         <h2><a class="header" [routerLink]="['/details', estate.id]">{{ estate.name }}</a></h2>
         <div>
           <img class="main-thumbnail" src="https://cdn.pixabay.com/photo/2016/11/29/03/53/architecture-1867187_960_720.jpg">
