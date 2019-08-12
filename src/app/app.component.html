@@ -21,14 +21,20 @@
 </ul>
 -->
 
-<div class="ui grid">
-  <div class="row two columns">
-    <div class="twelve wide column">
-      <h1 class="ui header">{{ title }}</h1>
-    </div>
-    <div class="four wide column">
-      <a class="ui button" [routerLink]="['/bookmark']">ブックマーク</a>
-    </div>
-  </div>
+<div class="header">
+  <h1 class="ui header"><i class="fas fa-paw"></i> {{ title }}</h1>
 </div>
-<router-outlet></router-outlet>
+<div class="ui secondary pointing menu">
+  <a class="item" [routerLink]="['/']">
+    Home
+  </a>
+  <a class="item" [routerLink]="['/result']" >
+    リスト
+  </a>
+  <a class="item" [routerLink]="['/bookmark']" >
+    ブックマーク
+  </a>
+</div>
+<div class="ui segment">
+  <router-outlet></router-outlet>
+</div>

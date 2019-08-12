@@ -26,11 +26,11 @@ import { SearchResultComponent } from './search-result/search-result.component';
     SearchResultComponent
   ],
   imports: [
+    NgxPaginationModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    NgxPaginationModule,
     RouterModule.forRoot([
       { path: '', component: StartFormComponent },
       { path: 'result', component: SearchResultComponent },
