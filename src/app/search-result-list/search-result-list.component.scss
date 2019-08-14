@@ -1,9 +1,9 @@
 .estate-item {
   border-radius: 1%;
   padding: 10px;
-  border-top : solid 2px black;
-  border-bottom: solid 2px black;
-  margin: 30px 10px 30px 10px;
+  border-top : solid 3px gray;
+  /* border-bottom: solid 2px black; */
+  margin: 30px 10px 30px 20px;
 }
 
 .pagination {
@@ -16,10 +16,12 @@ img {
 
 button {
   margin: 2px;
+  padding: 2px;
 }
 
 img.main-thumbnail{
-  width: 200px;
+  width: 100%;
+  min-width: 150px;
 }
 
 .thumbnail-column {
@@ -27,6 +29,6 @@ img.main-thumbnail{
 }
 
 table {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  padding: 10px;
+  margin: 10px;
 }
