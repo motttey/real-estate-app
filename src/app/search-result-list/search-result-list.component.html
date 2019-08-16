@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="row two columns">
-      <div class="four wide column thumbnail-column">
+      <div class="three wide column thumbnail-column">
         <div>
           <img class="main-thumbnail" src="https://cdn.pixabay.com/photo/2016/11/29/03/53/architecture-1867187_960_720.jpg">
         </div>
@@ -18,7 +18,7 @@
         <button class="ui button" [routerLink]="['/details', estate.id]">詳細</button>
       </div>
 
-      <div class="twelve wide column thumbnails">
+      <div class="thirteen wide column thumbnails">
         <div class="row">
           <div class="column">
             <table class="condition-table ui celled table">
@@ -78,6 +78,6 @@
 
 </div>
 
-  <div class="pagination">
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
-  </div>
+<div class="pagination">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

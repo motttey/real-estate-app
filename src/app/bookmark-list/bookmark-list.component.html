@@ -1,30 +1,89 @@
-<h2>ブックマーク</h2>
-
-<div class="ui items">
-  <div class="estate-item item" *ngFor="let estate of bookmarked_estates | paginate: { itemsPerPage: 10, currentPage: p }">
-    <div class="image">
-      <img src="https://cdn.pixabay.com/photo/2016/11/29/03/53/architecture-1867187_960_720.jpg">
+<div class="ui grid">
+  <div class="row two columns">
+    <div class="two wide column">
+      <h2>ブックマーク </h2>
     </div>
-    <div class="content">
-      <a class="header">{{ estate.name }}</a>
-      <div class="description">
-        <p>
-          <span>{{ estate.address }}</span>
-        </p>
-        <p>
-          <span>{{ estate.rent | currency: 'JPY' }}</span>
-        </p>
+    <div class="six wide column">
+      <a class="ui button" (click)="formSubmitHandler()" [routerLink]="['/result']">結果に戻る</a>
+    </div>
+  </div>
+</div>
+
+<div class="estate-item item" *ngFor="let estate of bookmarked_estates | paginate: { itemsPerPage: 10, currentPage: p }">
+  <div class="ui grid ">
+    <div class="row">
+      <div class="column">
+        <h2><a class="header" [routerLink]="['/details', estate.id]">{{ estate.name }}</a></h2>
       </div>
-      <div class="extra">
-        <div class="row">
-          <button class="ui button" [routerLink]="['/details', estate.id]">詳細</button>
-          <button class="ui button" (click)="removeElementHandler(estate)">削除</button>
+    </div>
+    <div class="row two columns center aligned padded">
+      <div class="three wide column thumbnail-column">
+        <div>
+          <img class="main-thumbnail" src="https://cdn.pixabay.com/photo/2016/11/29/03/53/architecture-1867187_960_720.jpg">
+        </div>
+        <button class="ui button" [routerLink]="['/details', estate.id]">詳細</button>
+        <button class="ui button" (click)="removeElementHandler(estate)">削除</button>
+      </div>
+
+      <div class="thirteen wide column thumbnails">
+        <div class="row two columns">
+          <div class="six wide column">
+            <table class="condition-table ui celled table">
+              <tbody>
+                <tr>
+                  <th>所在地</th>
+                  <td>
+                    <span>{{ estate.address }}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th>交通</th>
+                  <td>
+                    <span>hogehoge線 徒歩7分</span>
+                  </td>
+                </tr>
+                <tr>
+                    <th>他条件</th>
+                    <td>
+                      <span>aaa, bbb</span>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="six wide column">
+            <table class="extra-condition-table ui celled table">
+              <thead>
+                <th>間取り</th>
+                <th>階数</th>
+                <th>賃料/管理費</th>
+                <th>間取り/占有面積</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <span>image</span>
+                  </td>
+                  <td>
+                    <span>n階</span>
+                  </td>
+                  <td>
+                    <span>{{ estate.rent | currency: 'JPY' }}</span>
+                  </td>
+                  <td>
+                    <span>NDK/mmm</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
-
-<a class="ui button" (click)="formSubmitHandler()" [routerLink]="['/result']">結果に戻る</a>
+<div class="pagination">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
