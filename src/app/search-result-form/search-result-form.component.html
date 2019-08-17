@@ -118,6 +118,7 @@
                   > {{option.text}}
                 </label>
               </ng-container>
+              <a class="ui button" (click)="openModal($event);">他条件</a>
             </div>
           </div>
         </div>
@@ -129,3 +130,5 @@
     </div>
   </div>
 </div>
+
+<ng-container *ngComponentOutlet="modal"></ng-container>

@@ -1,6 +1,11 @@
-import { Component, OnInit, ChangeDetectorRef} from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef} from '@angular/core';
+import { Subscription } from 'rxjs';
+import { DetailedConditionsComponent } from '../detailed-conditions/detailed-conditions.component';
+
 import { Estate_Condition }    from '../estate_condition';
 import { SearchService } from '../search.service';
+import { ModalService } from '../modal.service';
+
 import { structures, rent_options, room_types, options, distance_options, age_options
         , rent_min_options, rent_max_options, area_min_options, area_max_options} from '../user_options';
 
@@ -9,7 +14,7 @@ import { structures, rent_options, room_types, options, distance_options, age_op
   templateUrl: './search-result-form.component.html',
   styleUrls: ['./search-result-form.component.scss']
 })
-export class SearchResultFormComponent implements OnInit {
+export class SearchResultFormComponent implements OnInit, OnDestroy {
   condition_model;
   structures = structures;
   rent_options = rent_options;
@@ -22,14 +27,37 @@ export class SearchResultFormComponent implements OnInit {
   area_min_options = area_min_options;
   area_max_options = area_max_options;
 
+  // 閉じたイベントを通知
+  private subscription: Subscription;
+  // ngComponentOutletにセットするプロパティ
+  public modal: any = null;
+
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
     private searchService: SearchService,
+    private modalService: ModalService,
   ) {
     this.condition_model = searchService.getConditionModel();
   }
 
   ngOnInit() {
+    this.subscription = this.modalService.closeEventObservable$.subscribe(
+      () => {
+        this.modal = null;
+      }
+    );
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
+  public openModal($event){
+    this.setModal();
+  }
+
+  private setModal(){
+    this.modal = DetailedConditionsComponent;
   }
 
   formSubmitHandler() {

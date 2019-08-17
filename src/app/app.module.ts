@@ -14,6 +14,7 @@ import { SearchResultFormComponent } from './search-result-form/search-result-fo
 import { SearchResultDetailComponent } from './search-result-detail/search-result-detail.component';
 import { BookmarkListComponent } from './bookmark-list/bookmark-list.component';
 import { SearchResultComponent } from './search-result/search-result.component';
+import { DetailedConditionsComponent } from './detailed-conditions/detailed-conditions.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SearchResultComponent } from './search-result/search-result.component';
     SearchResultFormComponent,
     SearchResultDetailComponent,
     BookmarkListComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    DetailedConditionsComponent,
   ],
   imports: [
     NgxPaginationModule,
@@ -38,7 +40,12 @@ import { SearchResultComponent } from './search-result/search-result.component';
       { path: 'bookmark', component: BookmarkListComponent },
     ])
   ],
-  providers: [],
+  entryComponents: [
+    DetailedConditionsComponent
+  ],
+  providers: [
+    DetailedConditionsComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
