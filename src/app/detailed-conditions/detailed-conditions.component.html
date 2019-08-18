@@ -1,7 +1,57 @@
 <div class="overlay">
-  <div class="ui grid">
+  <div class="ui grid center aligned">
     <div class="row">
-      <p>detailed-conditions works!</p>
+      <div class="column">
+        <div class="ui form">
+          <table class="condition-table ui celled table">
+            <tbody>
+              <tr>
+                <th>その他こだわり条件</th>
+                <td>
+                  <div class="inline field">
+                    <ng-container *ngFor="let option of options">
+                      <ul class="checkbox_container">
+                        <li>
+                          <label>
+                            <input type="checkbox" name="option.name" class="ui checkbox"
+                              [(ngModel)]="option.selected"
+                              [value]="option.name"
+                              (change)="option_changed(option)"
+                            > {{option.text}}
+                          </label>
+                        </li>
+                      </ul>
+                    </ng-container>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>バス・トイレ</th>
+                <td>
+                  <div class="inline field">
+                    <ng-container *ngFor="let option of bus_toilet_options">
+                      <ul class="checkbox_container">
+                        <li>
+                          <label>
+                            <input type="checkbox" name="option.name" class="ui checkbox"
+                              [(ngModel)]="option.selected"
+                              [value]="option.name"
+                              (change)="bus_toilet_option_changed(option)"
+                            > {{option.text}}
+                          </label>
+                        </li>
+                      </ul>
+                    </ng-container>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row aligned center">
       <button class="ui button" (click)="onClick($event)">Close</button>
     </div>
   </div>

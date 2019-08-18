@@ -128,3 +128,12 @@ export const area_max_options = [
   {text: "150m²", name: '150', selected: false},
   {text: "200m²", name: '200', selected: false},
 ];
+
+export const bus_toilet_options = [
+  {text: "バス・トイレ別", name: 'bus_toilet_separate', selected: false},
+  {text: "IHコンロ", name: 'IH_stove', selected: false},
+  {text: "コンロ二口以上", name: 'two_point_stove', selected: false},
+  {text: "システムキッチン", name: 'system_kitchen', selected: false},
+  {text: "カウンターキッチン", name: 'counter_kitchen', selected: false},
+  {text: "食器洗い乾燥機", name: 'dishwasher', selected: false},
+]

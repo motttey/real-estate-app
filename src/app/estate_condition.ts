@@ -14,6 +14,8 @@ export class Estate_Condition {
     public rent_options: string[],
     public structures: string[],
     public options: string[],
+
+    public bus_toilet_options: string[],
   ) {
     this.rent_max = rent_max;
     this.rent_min = rent_min;
@@ -27,5 +29,6 @@ export class Estate_Condition {
     this.rent_options = rent_options;
     this.structures = structures;
     this.options = options;
+    this.bus_toilet_options = bus_toilet_options;
   }
 }
