@@ -8,6 +8,8 @@
       <button class="ui button" (click)="formSubmitHandler(selected_estate)">ブックマーク</button>
     </div>
   </div>
+  
+  <div class="ui divider"></div>
 
   <div class="row content">
     <div class="fourteen wide column centered">
@@ -79,7 +81,7 @@
           <button class="ui button prev" (click)="getPrevIndex()"><</button>
         </div>
         <div class="twelve wide column">
-          <img [src]=thumbnail_list[thumbnail_index] width=100%>
+          <img [src]=thumbnail_list[thumbnail_index] class="main-thumbnail-image">
         </div>
         <div class="two wide column">
           <button class="ui button next" (click)="getNextIndex()">></button>
