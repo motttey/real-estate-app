@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SearchService } from '../search.service';
 import { BookmarkService } from '../bookmark.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-search-result-detail',
@@ -16,16 +17,17 @@ export class SearchResultDetailComponent implements OnInit, OnDestroy {
   p: number;
   thumbnail_list: Object[];
   thumbnail_click_sequence: string[];
+  model_update_api_path: string = "http://0.0.0.0:2019/api/update";
 
   constructor(
     private route: ActivatedRoute,
     private searchService: SearchService,
     private bookmarkService: BookmarkService,
+    private http: HttpClient,
   ) {
     this.estate_list = this.searchService.getSearchResult();
     this.bookmarks = this.bookmarkService.getBookmarks();
-    this.p = 1;
-    this.thumbnail_index = 3;
+    this.thumbnail_index = 0;
     this.thumbnail_click_sequence = [];
     this.thumbnail_list = [
       {
@@ -67,8 +69,21 @@ export class SearchResultDetailComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy (){
-    // console.log(this.thumbnail_click_sequence);
+  ngOnDestroy(){
+    console.log(this.thumbnail_click_sequence);
+    this.sendClickSequenceToModel(this.thumbnail_click_sequence);
+  }
+
+  sendClickSequenceToModel(sequence_list){
+    this.http.post(this.model_update_api_path, sequence_list
+    ).subscribe(
+        response => {
+            console.log(response);
+            },
+        error => {
+            alert("API Failed");
+        }
+    );
   }
 
   clickEventHandler(thumbnail): void {
