@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnInit, ChangeDetectorRef} from '@angular/core
 import { Estate_Condition }    from '../estate_condition';
 import { SearchService } from '../search.service';
 import { structures, rent_options, room_types, options, distance_options, age_options
-        , rent_min_options, rent_max_options, area_min_options, area_max_options} from '../user_options';
+        , rent_min_options, rent_max_options, area_min_options, area_max_options, bus_toilet_options} from '../user_options';
 
 @Component({
   selector: 'app-start-form',
@@ -17,6 +17,7 @@ export class StartFormComponent implements OnInit {
   options = options;
   distance_options = distance_options;
   age_options = age_options;
+  bus_toilet_options = bus_toilet_options;
   rent_min_options = rent_min_options;
   rent_max_options = rent_max_options;
   area_min_options = area_min_options;
@@ -87,5 +88,10 @@ export class StartFormComponent implements OnInit {
   option_changed(option) {
     this.changeDetectorRef.detectChanges();
     this.condition_model.options = this.checkbox_changed(this.options);
+  }
+
+  bus_toilet_option_changed(option) {
+    this.changeDetectorRef.detectChanges();
+    this.condition_model.bus_toilet_options = this.checkbox_changed(this.bus_toilet_options);
   }
 }

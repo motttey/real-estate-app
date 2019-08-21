@@ -144,16 +144,32 @@
   <!-- こだわり条件 -->
   <div class="row">
     <div class="column">
+      <h1>こだわり条件</h1>
       <div class="ui form">
-        <!--
-          <div class="inline field">
-            <div class="ui checkbox">
-              <input type="checkbox" tabindex="0">
-              <label>Checkbox</label>
-            </div>
-          </div>
-        -->
+        <table class="condition-table ui celled table">
+          <tbody>
+            <tr>
+              <th>バス・トイレ</th>
+              <td>
+                <div class="ui form">
+                  <div class="inline field">
+                    <ng-container *ngFor="let option of bus_toilet_options">
+                      <label>
+                        <input type="checkbox" name="option.name" class="ui checkbox"
+                          [(ngModel)]="option.selected"
+                          [value]="option.name"
+                          (change)="bus_toilet_option_changed(option)"
+                        > {{option.text}}
+                      </label>
+                    </ng-container>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+
     </div>
   </div>
 
