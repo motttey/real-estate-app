@@ -75,7 +75,10 @@ export class SearchResultDetailComponent implements OnInit, OnDestroy {
   }
 
   sendClickSequenceToModel(sequence_list){
-    this.http.post(this.model_update_api_path, sequence_list
+    let obj = {}
+    obj["value"] = sequence_list;
+
+    this.http.post(this.model_update_api_path, JSON.stringify(obj)
     ).subscribe(
         response => {
             console.log(response);
