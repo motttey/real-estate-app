@@ -21,7 +21,7 @@
     <div class="row two columns center aligned padded">
       <div class="three wide column thumbnail-column">
         <div>
-          <img class="main-thumbnail" src="https://cdn.pixabay.com/photo/2016/11/29/03/53/architecture-1867187_960_720.jpg">
+          <img class="main-thumbnail" src="{{estate.thumbnail_list[0].path}}">
         </div>
         <button class="ui button" [routerLink]="['/details', estate.id]">詳細</button>
         <button class="ui button" (click)="removeElementHandler(estate)">削除</button>
@@ -40,15 +40,16 @@
                 </tr>
                 <tr>
                   <th>交通</th>
-                  <td>
-                    <span>hogehoge線 徒歩7分</span>
-                  </td>
+                  <p *ngFor="let station of estate.stations_near">
+                    <span>{{ station.station_name }} 駅 </span>
+                    <span>{{ station.method }}{{ station.distance }}分</span>
+                  </p>
                 </tr>
                 <tr>
-                    <th>他条件</th>
-                    <td>
-                      <span>aaa, bbb</span>
-                    </td>
+                  <th>他条件</th>
+                  <td>
+                    <span *ngFor="let condition of estate.conditions">{{condition}} </span>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -65,16 +66,17 @@
               <tbody>
                 <tr>
                   <td>
-                    <span>image</span>
+                    <img class="floor-plan-image" src="{{estate.floor_plan_image}}"/>
                   </td>
                   <td>
-                    <span>n階</span>
+                    <span>{{estate.floor_numbers}} 階</span>
                   </td>
                   <td>
-                    <span>{{ estate.rent | currency: 'JPY' }}</span>
+                    <p>{{ estate.rent | currency: 'JPY' }}/{{ estate.administrative_fee | currency: 'JPY' }}</p>
+                    <p>{{ estate.deposit }}/{{ estate.gratuity_fee }}/{{ estate.security_money }}/{{ estate.amortization }}</p>
                   </td>
                   <td>
-                    <span>NDK/mmm</span>
+                    <span>{{estate.room_type}}/{{estate.room_size}}</span>
                   </td>
                 </tr>
               </tbody>

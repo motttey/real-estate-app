@@ -29,42 +29,19 @@ export class SearchResultDetailComponent implements OnInit, OnDestroy {
     this.bookmarks = this.bookmarkService.getBookmarks();
     this.thumbnail_index = 0;
     this.thumbnail_click_sequence = [];
-    this.thumbnail_list = [
-      {
-        tag: "A",
-        path: "https://cdn.pixabay.com/photo/2016/11/29/03/53/architecture-1867187_960_720.jpg",
-      },
-      {
-        tag: "B",
-        path: "https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940169_960_720.jpg",
-      },
-      {
-        tag: "C",
-        path: "https://cdn.pixabay.com/photo/2016/07/26/18/30/kitchen-1543493_960_720.jpg",
-      },
-      {
-        tag: "D",
-        path: "https://cdn.pixabay.com/photo/2018/08/15/20/53/bad-3609070_960_720.jpg",
-      },
-      {
-        tag: "E",
-        path: "https://cdn.pixabay.com/photo/2017/06/13/22/42/kitchen-2400367_960_720.jpg",
-      },
-      {
-        tag: "F",
-        path: "https://cdn.pixabay.com/photo/2016/11/29/03/53/architecture-1867187_960_720.jpg",
-      }
-    ]
+    this.thumbnail_list;
   }
 
   ngOnInit() {
-    this.estate_list .subscribe(res => {
+    this.estate_list.subscribe(res => {
         this.route.paramMap.subscribe(params => {
           console.log(res)
 
           this.selected_estate = res.find((x) => {
               return (x.id === params.get('estateId'));
           });
+
+          this.thumbnail_list = this.selected_estate.thumbnail_list;
         });
     });
   }

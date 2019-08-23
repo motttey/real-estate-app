@@ -24,37 +24,46 @@
           <tr>
             <th>交通</th>
             <td>
-              <span>hogehoge線 徒歩7分</span>
+              <p *ngFor="let station of selected_estate.stations_near">
+                <span>{{ station.station_name }} 駅 </span>
+                <span>{{ station.method }}{{ station.distance }}分</span>
+              </p>
             </td>
           </tr>
           <tr>
               <th>他条件</th>
               <td>
-                <span>aaa, bbb</span>
+                <span *ngFor="let condition of selected_estate.conditions">{{condition}} </span>
               </td>
-          </tr>
-          <tr>
-            <th>間取り</th>
-            <td>
-              <span>image</span>
-            </td>
           </tr>
           <tr>
             <th>階数</th>
             <td>
-              <span>n階</span>
+              <span>{{ selected_estate.floor_numbers }}階建 ({{selected_estate.room_direction}}向き)</span>
+            </td>
+          </tr>
+          <tr>
+            <th>築年月</th>
+            <td>
+              <span>{{ selected_estate.building_date }} (築{{ selected_estate.building_age }}年)</span>
             </td>
           </tr>
           <tr>
             <th>賃料/管理費</th>
             <td>
-              <span>{{ selected_estate.rent | currency: 'JPY' }}</span>
+              <span>{{ selected_estate.rent | currency: 'JPY' }}/{{ selected_estate.administrative_fee | currency: 'JPY' }}</span>
+            </td>
+          </tr>
+          <tr>
+            <th>敷金/礼金/保証/償却</th>
+            <td>
+              <span>{{ selected_estate.deposit }}/{{ selected_estate.gratuity_fee }}/{{ selected_estate.security_money }}/{{ selected_estate.amortization }}</span>
             </td>
           </tr>
           <tr>
             <th>間取り/占有面積</th>
             <td>
-              <span>NDK/mmm</span>
+              <span>{{selected_estate.room_type}}/{{selected_estate.room_size}} ({{selected_estate.room_type_details}})</span>
             </td>
           </tr>
         </tbody>
@@ -67,7 +76,7 @@
     <div class="six wide column thumbnails">
       <div class="ui grid center aligned">
         <div class="row two columns" >
-          <img class="thumbnail eight wide column centered" *ngFor="let thumbnail of thumbnail_list | paginate: { itemsPerPage: 6, currentPage: p }" (click)="clickEventHandler(thumbnail)" [src]="thumbnail.path" width="40%">
+          <img class="thumbnail eight wide column centered" *ngFor="let thumbnail of selected_estate.thumbnail_list | paginate: { itemsPerPage: 6, currentPage: p }" (click)="clickEventHandler(thumbnail)" [src]="thumbnail.path" width="40%">
         </div>
         <div class="row one column pagination">
           <pagination-controls (pageChange)="p = $event"></pagination-controls>
@@ -80,8 +89,9 @@
         <div class="two wide column">
           <button class="ui button prev" (click)="getPrevIndex()"><</button>
         </div>
-        <div class="twelve wide column">
-          <img [src]=thumbnail_list[thumbnail_index].path class="main-thumbnail-image">
+        <div class="twelve wide column center aligned">
+          <img [src]=selected_estate.thumbnail_list[thumbnail_index].path class="main-thumbnail-image">
+          <p class="thumbnail_information">{{selected_estate.thumbnail_list[thumbnail_index].text}}</p>
         </div>
         <div class="two wide column">
           <button class="ui button next" (click)="getNextIndex()">></button>

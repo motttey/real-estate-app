@@ -6,31 +6,33 @@
     "stations_near": [
       {
         "station_name": "八王子",
+        "method": "徒歩",
         "distance": 10
       },
       {
         "station_name": "西八王子",
+        "method": "徒歩",
         "distance": 20
       }
     ],
     "rent": 68000,
     "administrative_fee": 5000,
     "deposit": "１ヶ月",
-    "gratuity-fee": "１ヶ月",
-    "security-money": "-",
+    "gratuity_fee": "１ヶ月",
+    "security_money": "-",
     "amortization": "-",
     "conditions": [
       "都市ガス", "南向き", "風呂トイレ別"
     ],
-    "building-date": "2017年11月",
-    "building-age": 2,
-    "room-direction": "南",
-    "room-size": 27.05,
-    "balcony-size": "-",
-    "room-type": "1K",
-    "room-type-details": "和室8.2帖",
-    "floor-numbers": "3階",
-    "floor-plan-image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Sample_Floorplan.jpg",
+    "building_date": "2017年11月",
+    "building_age": 2,
+    "room_direction": "南",
+    "room_size": 27.05,
+    "balcony_size": "-",
+    "room_type": "1K",
+    "room_type_details": "和室8.2帖",
+    "floor_numbers": 4,
+    "floor_plan_image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Sample_Floorplan.jpg",
     "thumbnail_list": [
       {
         "tag": "A",
@@ -71,31 +73,33 @@
     "stations_near": [
       {
         "station_name": "八王子",
+        "method": "徒歩",
         "distance": 10
       },
       {
         "station_name": "西八王子",
+        "method": "徒歩",
         "distance": 20
       }
     ],
     "rent": 68000,
     "administrative_fee": 5000,
     "deposit": "１ヶ月",
-    "gratuity-fee": "１ヶ月",
-    "security-money": "-",
+    "gratuity_fee": "１ヶ月",
+    "security_money": "-",
     "amortization": "-",
     "conditions": [
       "都市ガス", "南向き", "風呂トイレ別"
     ],
-    "building-date": "2017年11月",
-    "building-age": 2,
-    "room-direction": "南",
-    "room-size": 27.05,
-    "balcony-size": "-",
-    "room-type": "1K",
-    "room-type-details": "和室8.2帖",
-    "floor-numbers": "3階",
-    "floor-plan-image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Sample_Floorplan.jpg",
+    "building_date": "2017年11月",
+    "building_age": 2,
+    "room_direction": "南",
+    "room_size": 27.05,
+    "balcony_size": "-",
+    "room_type": "1K",
+    "room_type_details": "和室8.2帖",
+    "floor_numbers": 4,
+    "floor_plan_image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Sample_Floorplan.jpg",
     "thumbnail_list": [
       {
         "tag": "A",
