@@ -130,10 +130,62 @@ export const area_max_options = [
 ];
 
 export const bus_toilet_options = [
+  {text: "バス・トイレ別", name: 'bath_toilet_separate', selected: false},
+  {text: "追炊機能", name: 'reheating', selected: false},
+  {text: "温水洗浄便座", name: 'bidet_toilet', selected: false},
+  {text: "浴室乾燥機", name: 'dehumidifier', selected: false},
+  {text: "洗面所", name: 'washroom_separate', selected: false},
+  {text: "室内洗濯機置場", name: 'washing_machine_storage_inside', selected: false},
+];
+
+export const security_options = [
+  {text: "オートロック", name: 'autolock', selected: false},
+  {text: "防犯カメラ", name: 'security_camera', selected: false},
+  {text: "TVモニタ付インターホン", name: 'TV_camera_intercom', selected: false},
+  {text: "宅配ボックス", name: 'delivery_box', selected: false},
+];
+
+export const kitchen_options = [
   {text: "バス・トイレ別", name: 'bus_toilet_separate', selected: false},
   {text: "IHコンロ", name: 'IH_stove', selected: false},
   {text: "コンロ二口以上", name: 'two_point_stove', selected: false},
   {text: "システムキッチン", name: 'system_kitchen', selected: false},
   {text: "カウンターキッチン", name: 'counter_kitchen', selected: false},
   {text: "食器洗い乾燥機", name: 'dishwasher', selected: false},
-]
+];
+
+export const position_options = [
+  {text: "1階の物件", name: '1st_floor', selected: false},
+  {text: "2階の物件", name: '2nd_or_more', selected: false},
+  {text: "最上階", name: 'top_floor', selected: false},
+  {text: "角部屋", name: 'corner_room', selected: false},
+  {text: "角部屋", name: 'facing_south', selected: false},
+];
+
+export const other_options = [
+  {text: "ウォークインクローゼット", name: 'walk-in_closet', selected: false},
+  {text: "エアコン", name: 'air_conditioner', selected: false},
+  {text: "床暖房", name: 'floor_heating', selected: false},
+  {text: "都市ガス", name: 'urban_gas ', selected: false},
+  {text: "オール電化", name: 'all-electric', selected: false},
+  {text: "メゾネット", name: 'maisonette', selected: false},
+  {text: "フローリング", name: 'flooring', selected: false},
+  {text: "専用庭", name: 'garden', selected: false},
+  {text: "バルコニー", name: 'balcony', selected: false},
+  {text: "バリアフリー", name: 'barrier_free', selected: false},
+  {text: "ロフト付き", name: 'loft', selected: false},
+  {text: "エレベーター", name: 'elevator', selected: false},
+];
+
+export const parking_options = [
+  {text: "駐車場あり", name: 'parking', selected: false},
+  {text: "バイク置き場あり", name: 'motor_bicycle_parking', selected: false},
+  {text: "駐輪場あり", name: 'bicycle_parking', selected: false},
+];
+
+export const surrounding_environment_options = [
+  {text: "スーパー800m以内", name: 'supermarket', selected: false},
+  {text: "コンビニ800m以内", name: 'convenience_store', selected: false},
+  {text: "小学校800m以内", name: 'elementary_school', selected: false},
+  {text: "総合病院800m以内", name: 'hospital', selected: false},
+];

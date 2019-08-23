@@ -1,8 +1,7 @@
 import { Component, EventEmitter, OnInit, ChangeDetectorRef} from '@angular/core';
 import { Estate_Condition }    from '../estate_condition';
 import { SearchService } from '../search.service';
-import { structures, rent_options, room_types, options, distance_options, age_options
-        , rent_min_options, rent_max_options, area_min_options, area_max_options, bus_toilet_options} from '../user_options';
+import * as user_options from '../user_options';
 
 @Component({
   selector: 'app-start-form',
@@ -11,17 +10,24 @@ import { structures, rent_options, room_types, options, distance_options, age_op
 })
 export class StartFormComponent implements OnInit {
   condition_model;
-  structures = structures;
-  rent_options = rent_options;
-  room_types = room_types;
-  options = options;
-  distance_options = distance_options;
-  age_options = age_options;
-  bus_toilet_options = bus_toilet_options;
-  rent_min_options = rent_min_options;
-  rent_max_options = rent_max_options;
-  area_min_options = area_min_options;
-  area_max_options = area_max_options;
+  structures = user_options.structures;
+  rent_options = user_options.rent_options;
+  room_types = user_options.room_types;
+  distance_options = user_options.distance_options;
+  age_options = user_options.age_options;
+
+  bus_toilet_options = user_options.bus_toilet_options;
+  kitchen_options = user_options.kitchen_options;
+  security_options = user_options.security_options;
+  position_options = user_options.position_options;
+  other_options = user_options.other_options;
+  parking_options = user_options.parking_options;
+  surrounding_environment_options = user_options.surrounding_environment_options;
+
+  rent_min_options = user_options.rent_min_options;
+  rent_max_options = user_options.rent_max_options;
+  area_min_options = user_options.area_min_options;
+  area_max_options = user_options.area_max_options;
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
@@ -85,13 +91,33 @@ export class StartFormComponent implements OnInit {
     this.condition_model.room_types = this.checkbox_changed(this.room_types);
   }
 
-  option_changed(option) {
+  position_options_changed(option) {
     this.changeDetectorRef.detectChanges();
-    this.condition_model.options = this.checkbox_changed(this.options);
+    this.condition_model.position_options = this.checkbox_changed(this.position_options);
+  }
+
+  kitchen_options_changed(option) {
+    this.changeDetectorRef.detectChanges();
+    this.condition_model.kitchen_options = this.checkbox_changed(this.kitchen_options);
   }
 
   bus_toilet_option_changed(option) {
     this.changeDetectorRef.detectChanges();
     this.condition_model.bus_toilet_options = this.checkbox_changed(this.bus_toilet_options);
+  }
+
+  parking_options_changed(option) {
+    this.changeDetectorRef.detectChanges();
+    this.condition_model.parking_options = this.checkbox_changed(this.parking_options);
+  }
+
+  surrounding_environment_options_changed(option) {
+    this.changeDetectorRef.detectChanges();
+    this.condition_model.surrounding_environment_options = this.checkbox_changed(this.surrounding_environment_options);
+  }
+
+  other_options_changed(option) {
+    this.changeDetectorRef.detectChanges();
+    this.condition_model.other_options = this.checkbox_changed(this.other_options);
   }
 }

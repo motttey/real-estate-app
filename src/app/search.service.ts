@@ -6,7 +6,7 @@ import { Estate_Condition }    from './estate_condition';
   providedIn: 'root'
 })
 export class SearchService {
-  condition_model = new Estate_Condition(0, 0, 0, 0, "none", "none", [], [], [], [], []);
+  condition_model = new Estate_Condition(0, 0, 0, 0, "none", "none", [], [], [], [], [], [], [], [], []);
   search_api_path: string = "http://0.0.0.0:3030/api/search";
 
   constructor(

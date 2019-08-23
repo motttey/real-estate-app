@@ -13,9 +13,14 @@ export class Estate_Condition {
     // public floor_plans: string[],
     public rent_options: string[],
     public structures: string[],
-    public options: string[],
-
+    public position_options: string[],
+    public kitchen_options: string[],
     public bus_toilet_options: string[],
+    public parking_options: string[],
+    public surrounding_environment_options: string[],
+
+    public other_options: string[],
+
   ) {
     this.rent_max = rent_max;
     this.rent_min = rent_min;
@@ -28,7 +33,12 @@ export class Estate_Condition {
     // this.floor_plans = floor_plans;
     this.rent_options = rent_options;
     this.structures = structures;
-    this.options = options;
+
+    this.kitchen_options = kitchen_options;
+    this.position_options = position_options;
     this.bus_toilet_options = bus_toilet_options;
+    this.parking_options = parking_options;
+    this.surrounding_environment_options = surrounding_environment_options;
+    this.other_options = other_options;
   }
 }

@@ -6,8 +6,7 @@ import { Estate_Condition }    from '../estate_condition';
 import { SearchService } from '../search.service';
 import { ModalService } from '../modal.service';
 
-import { structures, rent_options, room_types, options, distance_options, age_options
-        , rent_min_options, rent_max_options, area_min_options, area_max_options} from '../user_options';
+import * as user_options from '../user_options';
 
 @Component({
   selector: 'app-search-result-form',
@@ -16,16 +15,16 @@ import { structures, rent_options, room_types, options, distance_options, age_op
 })
 export class SearchResultFormComponent implements OnInit, OnDestroy {
   condition_model;
-  structures = structures;
-  rent_options = rent_options;
-  room_types = room_types;
-  options = options;
-  distance_options = distance_options;
-  age_options = age_options;
-  rent_min_options = rent_min_options;
-  rent_max_options = rent_max_options;
-  area_min_options = area_min_options;
-  area_max_options = area_max_options;
+  structures = user_options.structures;
+  rent_options = user_options.rent_options;
+  room_types = user_options.room_types;
+
+  distance_options = user_options.distance_options;
+  age_options = user_options.age_options;
+  rent_min_options = user_options.rent_min_options;
+  rent_max_options = user_options.rent_max_options;
+  area_min_options = user_options.area_min_options;
+  area_max_options = user_options.area_max_options;
 
   // 閉じたイベントを通知
   private subscription: Subscription;
@@ -118,9 +117,5 @@ export class SearchResultFormComponent implements OnInit, OnDestroy {
     this.condition_model.room_types = this.checkbox_changed(this.room_types);
   }
 
-  option_changed(option) {
-    this.changeDetectorRef.detectChanges();
-    this.condition_model.options = this.checkbox_changed(this.options);
-  }
 
 }

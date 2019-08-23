@@ -116,24 +116,6 @@
               </td>
             </tr>
 
-            <tr>
-              <th>その他こだわり条件</th>
-              <td>
-                <div class="inline field">
-                  <ng-container *ngFor="let option of options">
-                    <label>
-                      <input type="checkbox" name="option.name" class="ui checkbox"
-                        [(ngModel)]="option.selected"
-                        [value]="option.name"
-                        (change)="option_changed(option)"
-                      > {{option.text}}
-                    </label>
-                  </ng-container>
-                </div>
-              </td>
-            </tr>
-
-
           </tbody>
         </table>
 
@@ -148,6 +130,45 @@
       <div class="ui form">
         <table class="condition-table ui celled table">
           <tbody>
+
+            <tr>
+              <th>位置</th>
+              <td>
+                <div class="ui form">
+                  <div class="inline field">
+                    <ng-container *ngFor="let option of position_options">
+                      <label>
+                        <input type="checkbox" name="option.name" class="ui checkbox"
+                          [(ngModel)]="option.selected"
+                          [value]="option.name"
+                          (change)="position_options_changed(option)"
+                        > {{option.text}}
+                      </label>
+                    </ng-container>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <th>キッチン</th>
+              <td>
+                <div class="ui form">
+                  <div class="inline field">
+                    <ng-container *ngFor="let option of kitchen_options">
+                      <label>
+                        <input type="checkbox" name="option.name" class="ui checkbox"
+                          [(ngModel)]="option.selected"
+                          [value]="option.name"
+                          (change)="kitchen_options_changed(option)"
+                        > {{option.text}}
+                      </label>
+                    </ng-container>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
             <tr>
               <th>バス・トイレ</th>
               <td>
@@ -166,6 +187,58 @@
                 </div>
               </td>
             </tr>
+
+            <tr>
+              <th>駐車場</th>
+              <td>
+                <div class="inline field">
+                  <ng-container *ngFor="let option of parking_options">
+                    <label>
+                      <input type="checkbox" name="option.name" class="ui checkbox"
+                        [(ngModel)]="option.selected"
+                        [value]="option.name"
+                        (change)="parking_options_changed(option)"
+                      > {{option.text}}
+                    </label>
+                  </ng-container>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <th>周辺環境</th>
+              <td>
+                <div class="inline field">
+                  <ng-container *ngFor="let option of surrounding_environment_options">
+                    <label>
+                      <input type="checkbox" name="option.name" class="ui checkbox"
+                        [(ngModel)]="option.selected"
+                        [value]="option.name"
+                        (change)="surrounding_environment_options_changed(option)"
+                      > {{option.text}}
+                    </label>
+                  </ng-container>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <th>その他こだわり条件</th>
+              <td>
+                <div class="inline field">
+                  <ng-container *ngFor="let option of other_options">
+                    <label>
+                      <input type="checkbox" name="option.name" class="ui checkbox"
+                        [(ngModel)]="option.selected"
+                        [value]="option.name"
+                        (change)="other_options_changed(option)"
+                      > {{option.text}}
+                    </label>
+                  </ng-container>
+                </div>
+              </td>
+            </tr>
+
           </tbody>
         </table>
       </div>
