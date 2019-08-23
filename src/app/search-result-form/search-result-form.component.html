@@ -109,15 +109,6 @@
           <div class="fields">
             <label></label>
             <div class="inline field">
-              <ng-container *ngFor="let option of options">
-                <label>
-                  <input type="checkbox" name="option.name" class="ui checkbox"
-                    [(ngModel)]="option.selected"
-                    [value]="option.name"
-                    (change)="option_changed(option)"
-                  > {{option.text}}
-                </label>
-              </ng-container>
               <a class="ui button" (click)="openModal($event);">他条件</a>
             </div>
           </div>

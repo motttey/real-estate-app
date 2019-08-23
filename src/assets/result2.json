@@ -1,0 +1,132 @@
+[
+  {
+    "id": "1",
+    "name": "物件1",
+    "address": "東京都千代田区千代田1-1",
+    "stations_near": [
+      {
+        "station_name": "八王子",
+        "distance": 10
+      },
+      {
+        "station_name": "西八王子",
+        "distance": 20
+      }
+    ],
+    "rent": 68000,
+    "administrative_fee": 5000,
+    "deposit": "１ヶ月",
+    "gratuity-fee": "１ヶ月",
+    "security-money": "-",
+    "amortization": "-",
+    "conditions": [
+      "都市ガス", "南向き", "風呂トイレ別"
+    ],
+    "building-date": "2017年11月",
+    "building-age": 2,
+    "room-direction": "南",
+    "room-size": 27.05,
+    "balcony-size": "-",
+    "room-type": "1K",
+    "room-type-details": "和室8.2帖",
+    "floor-numbers": "3階",
+    "floor-plan-image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Sample_Floorplan.jpg",
+    "thumbnail_list": [
+      {
+        "tag": "A",
+        "text": "外観",
+        "path": "https://cdn.pixabay.com/photo/2016/11/29/03/53/architecture-1867187_960_720.jpg"
+      },
+      {
+        "tag": "B",
+        "text": "居間",
+        "path": "https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940169_960_720.jpg"
+      },
+      {
+        "tag": "C",
+        "text": "寝室",
+        "path": "https://cdn.pixabay.com/photo/2016/07/26/18/30/kitchen-1543493_960_720.jpg"
+      },
+      {
+        "tag": "D",
+        "text": "キッチン",
+        "path": "https://cdn.pixabay.com/photo/2018/08/15/20/53/bad-3609070_960_720.jpg"
+      },
+      {
+        "tag": "E",
+        "text": "トイレ",
+        "path": "https://cdn.pixabay.com/photo/2017/06/13/22/42/kitchen-2400367_960_720.jpg"
+      },
+      {
+        "tag": "F",
+        "text": "近隣",
+        "path": "https://cdn.pixabay.com/photo/2016/11/29/03/53/architecture-1867187_960_720.jpg"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "物件2",
+    "address": "東京都千代田区千代田1-1",
+    "stations_near": [
+      {
+        "station_name": "八王子",
+        "distance": 10
+      },
+      {
+        "station_name": "西八王子",
+        "distance": 20
+      }
+    ],
+    "rent": 68000,
+    "administrative_fee": 5000,
+    "deposit": "１ヶ月",
+    "gratuity-fee": "１ヶ月",
+    "security-money": "-",
+    "amortization": "-",
+    "conditions": [
+      "都市ガス", "南向き", "風呂トイレ別"
+    ],
+    "building-date": "2017年11月",
+    "building-age": 2,
+    "room-direction": "南",
+    "room-size": 27.05,
+    "balcony-size": "-",
+    "room-type": "1K",
+    "room-type-details": "和室8.2帖",
+    "floor-numbers": "3階",
+    "floor-plan-image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Sample_Floorplan.jpg",
+    "thumbnail_list": [
+      {
+        "tag": "A",
+        "text": "外観",
+        "path": "https://cdn.pixabay.com/photo/2016/11/29/03/53/architecture-1867187_960_720.jpg"
+      },
+      {
+        "tag": "B",
+        "text": "居間",
+        "path": "https://cdn.pixabay.com/photo/2016/12/30/07/55/bedroom-1940169_960_720.jpg"
+      },
+      {
+        "tag": "C",
+        "text": "寝室",
+        "path": "https://cdn.pixabay.com/photo/2016/07/26/18/30/kitchen-1543493_960_720.jpg"
+      },
+      {
+        "tag": "D",
+        "text": "キッチン",
+        "path": "https://cdn.pixabay.com/photo/2018/08/15/20/53/bad-3609070_960_720.jpg"
+      },
+      {
+        "tag": "E",
+        "text": "トイレ",
+        "path": "https://cdn.pixabay.com/photo/2017/06/13/22/42/kitchen-2400367_960_720.jpg"
+      },
+      {
+        "tag": "F",
+        "text": "近隣",
+        "path": "https://cdn.pixabay.com/photo/2016/11/29/03/53/architecture-1867187_960_720.jpg"
+      }
+    ]
+  }
+]

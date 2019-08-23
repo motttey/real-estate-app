@@ -39,6 +39,6 @@ export class SearchService {
     );
     */
 
-    return this.http.get('/assets/result.json');
+    return this.http.get('/assets/result2.json');
   }
 }
