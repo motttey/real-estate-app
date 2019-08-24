@@ -1,7 +1,10 @@
-img.thumbnail {
-  margin: 10px;
+.thumbnail_images {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.ui .image_label {
+  margin-left: 30px;
 }
 
 pagination-controls {
@@ -12,9 +15,8 @@ pagination-controls {
   margin-left: -60px;
 }
 
-img.thumbnail:hover {
+img.thumbnail_image:hover {
   opacity: 0.7;
-  filter: alpha(opacity=80);
   -moz-opacity: 0.7;
   -webkit-transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
@@ -30,4 +32,10 @@ img.thumbnail:hover {
 .main-thumbnail-image {
   width: 100%;
   min-width: 300px;
+}
+
+.condition_text {
+  color: red;
+  background-color: pink;
+  margin-right: 5px;
 }

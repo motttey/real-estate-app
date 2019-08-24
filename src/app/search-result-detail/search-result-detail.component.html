@@ -31,10 +31,10 @@
             </td>
           </tr>
           <tr>
-              <th>他条件</th>
-              <td>
-                <span *ngFor="let condition of selected_estate.conditions">{{condition}} </span>
-              </td>
+            <th>他条件</th>
+            <td>
+              <span class="condition_text" *ngFor="let condition of selected_estate.conditions">{{condition}} </span>
+            </td>
           </tr>
           <tr>
             <th>階数</th>
@@ -63,7 +63,7 @@
           <tr>
             <th>間取り/占有面積</th>
             <td>
-              <span>{{selected_estate.room_type}}/{{selected_estate.room_size}} ({{selected_estate.room_type_details}})</span>
+              <span>{{selected_estate.room_type}}/{{selected_estate.room_size}}㎡ ({{selected_estate.room_type_details}})</span>
             </td>
           </tr>
         </tbody>
@@ -75,8 +75,11 @@
 
     <div class="six wide column thumbnails">
       <div class="ui grid center aligned">
-        <div class="row two columns" >
-          <img class="thumbnail eight wide column centered" *ngFor="let thumbnail of selected_estate.thumbnail_list | paginate: { itemsPerPage: 6, currentPage: p }" (click)="clickEventHandler(thumbnail)" [src]="thumbnail.path" width="40%">
+        <div class="row two columns" thumbnail>
+          <div class="thumbnail_images eight wide column centered ui fluid image" *ngFor="let thumbnail of selected_estate.thumbnail_list | paginate: { itemsPerPage: 6, currentPage: p }">
+            <div class="image_label ui gray ribbon left label">{{thumbnail.text}}</div>
+            <img class="thumbnail_image" (click)="clickEventHandler(thumbnail)" [src]="thumbnail.path" width="40%">
+          </div>
         </div>
         <div class="row one column pagination">
           <pagination-controls (pageChange)="p = $event"></pagination-controls>
