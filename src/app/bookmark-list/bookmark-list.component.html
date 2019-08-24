@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="row two columns center aligned padded">
-      <div class="three wide column thumbnail-column">
+      <div class="five wide column thumbnail-column">
         <div>
           <img class="main-thumbnail" src="{{estate.thumbnail_list[0].path}}">
         </div>
@@ -27,7 +27,7 @@
         <button class="ui button" (click)="removeElementHandler(estate)">削除</button>
       </div>
 
-      <div class="thirteen wide column thumbnails">
+      <div class="eleven wide column thumbnails">
         <div class="row two columns">
           <div class="six wide column">
             <table class="condition-table ui celled table">
@@ -48,7 +48,7 @@
                 <tr>
                   <th>他条件</th>
                   <td>
-                    <span *ngFor="let condition of estate.conditions">{{condition}} </span>
+                    <span class="condition_text" *ngFor="let condition of estate.conditions">{{condition}} </span>
                   </td>
                 </tr>
               </tbody>
@@ -76,7 +76,7 @@
                     <p>{{ estate.deposit }}/{{ estate.gratuity_fee }}/{{ estate.security_money }}/{{ estate.amortization }}</p>
                   </td>
                   <td>
-                    <span>{{estate.room_type}}/{{estate.room_size}}</span>
+                    <span>{{estate.room_type}}/{{estate.room_size}}㎡</span>
                   </td>
                 </tr>
               </tbody>

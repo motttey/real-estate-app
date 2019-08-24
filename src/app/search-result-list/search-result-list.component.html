@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="row two columns">
-      <div class="three wide column thumbnail-column">
+      <div class="five wide column thumbnail-column">
         <div>
           <img class="main-thumbnail" src="{{estate.thumbnail_list[0].path}}">
         </div>
@@ -18,7 +18,7 @@
         <button class="ui button" [routerLink]="['/details', estate.id]">詳細</button>
       </div>
 
-      <div class="thirteen wide column thumbnails">
+      <div class="eleven wide column thumbnails">
         <div class="row">
           <div class="column">
             <table class="condition-table ui celled table">
@@ -35,14 +35,13 @@
                     <p *ngFor="let station of estate.stations_near">
                       <span>{{ station.station_name }} 駅 </span>
                       <span>{{ station.method }}{{ station.distance }}分</span>
-
                     </p>
                   </td>
                 </tr>
                 <tr>
                     <th>他条件</th>
                     <td>
-                      <span *ngFor="let condition of estate.conditions">{{condition}} </span>
+                      <span class="condition_text" *ngFor="let condition of estate.conditions">{{condition}}</span>
                     </td>
                 </tr>
               </tbody>
@@ -73,7 +72,7 @@
                     <p>{{ estate.deposit }}/{{ estate.gratuity_fee }}/{{ estate.security_money }}/{{ estate.amortization }}</p>
                   </td>
                   <td>
-                    <span>{{estate.room_type}}/{{estate.room_size}}</span>
+                    <span>{{estate.room_type}}/{{estate.room_size}}㎡</span>
                   </td>
                 </tr>
               </tbody>
