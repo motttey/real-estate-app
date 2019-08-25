@@ -14,7 +14,7 @@
         <div>
           <img class="main-thumbnail" src="{{estate.thumbnail_list[0].path}}">
         </div>
-        <button class="ui button" (click)="formSubmitHandler(estate)">ブックマーク</button>
+        <button class="ui button" (click)="formSubmitHandler(estate)">お気に入り</button>
         <button class="ui button" [routerLink]="['/details', estate.id]">詳細</button>
       </div>
 
